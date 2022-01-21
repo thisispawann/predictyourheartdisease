@@ -1,0 +1,57 @@
+{% extends 'base_layout2.html' %}
+
+{% block css %}
+<style> 
+    footer {
+        padding-left: 295px;
+    }
+    .con{
+        padding-left: 390px;
+        width: 90%;
+        flex: 1 0 auto;
+    }
+    html{
+        font-family: 'Raleway', sans-serif;
+      }
+    @media only screen and (max-width : 992px) {
+      .con, footer {
+        padding-left: 0;
+      }
+    }
+
+    body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    }
+
+
+ </style>
+{% endblock %}
+
+{% block content %}
+
+<div class="con">
+    <br> 
+   <h5 style="padding-left: 150px;"> Your probability of having Heart Disease  is {{ output1 }}</h5>
+
+    <br> 
+   <h5 style="padding-left: 150px;">  Your chance of having Heart Disease is {{ danger }}, 
+    {% if success == 'low' %}
+    <br>    Please continue your healthy habit.   </h5>
+    {% endif %}
+    {% if danger == 'high' %}
+        
+        <br>
+        <br>
+        <a style="margin-left: 150px; background-color: #b7efba !important;
+        color: black" class="blue-grey darken-4 btn  waves-effect waves-light" href="{% url 'doctorhospital' %}">View Doctors & Hospitals
+         
+        </a>
+        
+    {% endif %}
+  
+ 
+  
+</div> 
+{% endblock %}

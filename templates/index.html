@@ -1,0 +1,126 @@
+{% extends 'base_layout.html' %} {% load static %} {% block content %}
+<style>
+  html{
+    font-family: 'Raleway', sans-serif;
+  }
+  .about {
+    background: #eee;
+  }
+  .about .content .box {
+    margin: 3rem 0;
+  }
+
+  .about .content .box h3 {
+    color: var(--black);
+  }
+
+  .about .content .box h3 i {
+    padding: 0.1rem;
+    color: var(--blue);
+  }
+  .about .content .box p {
+    font-size: 1.7rem;
+    padding-left: 6rem;
+    color: #666;
+  }
+</style>
+<div class="slider">
+  <ul class="slides">
+    <li>
+      <img src="{% static 'img/heart.jpeg' %}" />
+      <div class="caption left-align">
+        <br />
+        <br />
+        <br />
+        <h2 class="">
+          Predict your <br />
+          Heart Disease Now <br />
+          <p style="font-size: 22px">
+            Get access to state of the art
+            <b style="color: red">Machine Learning</b> engines that forecast
+            your heart disease
+          </p>
+        </h2>
+        <br />
+        <a
+          class="black waves-effect waves-light btn"
+          style="border-radius: 5px; background-color: #7aaf7c !important; height: 3.4rem; line-height:3.4rem; padding: 0 25px; font-size: 16px !important"
+          href="{% url 'signin' %}"
+        >
+          Get Started
+        </a>
+        &nbsp; &nbsp;
+        <a
+          class="black waves-effect waves-light btn"
+          style="border-radius: 5px; background-color: #d24a57 !important; height: 3.4rem; line-height:3.4rem; padding: 0 25px; font-size: 16px !important"
+          href="{% url 'signup' %}"
+        >
+          Signup
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
+<br />
+<!--OUR SERVICES-->
+<br />
+<section>
+  <div class="row" id="about">
+    <div class="col s4 m4 l4 offset-s4 offset-l4 offset-m4"></div>
+    <br />
+    <br />
+    <br />
+  </div>
+  <div class="row" style="width: 85%; margin: auto">
+    <div class="col s12 m5" data-aos="fade-left">
+      <p style="font-size: 20px; text-align: justify">
+        Heart Disease Prediction System is a user-friendly web-based application
+        which predicts heart disease using Random Forest Classifier a Machine
+        Learning Algorithm. The data extracted from patient includes 13
+        different parameters like age, sex, blood pressure, chest pain etc. The
+        result is extracted by processing patient’s dataset and a data of
+        patients to whom we need to predict the chance of occurrence of a heart
+        disease.
+      </p>
+    </div>
+    <div class="col s12 m6 offset-m1" data-aos="fade-right">
+      <img src="{% static 'img/4.jpg' %}" class="responsive-img" />
+    </div>
+  </div>
+</section>
+<!-- analysis using notebook-->
+
+<br />
+<br />
+<section>
+  <div class="row">
+    <div class="col s4 m4 l4 offset-s4 offset-l4 offset-m4"></div>
+    <br />
+    <br />
+    <br />
+  </div>
+  <div class="row" style="width: 85%; margin: auto" data-aos="fade-right">
+    <div class="col s12 m6">
+      <img src="{% static 'img/jupyter.png' %}" class="responsive-img" />
+    </div>
+    <div class="col s12 m5 offset-m1" data-aos="fade-left">
+      <h5 style="color: #ff1203; width: 60%">
+        Analysis Using Python and Jupyter Notebook
+      </h5>
+      <p style="font-size: 20px; text-align: justify">
+        The code used for analysis of data and getting prediction rates is
+        pretty simple. The code is written in Python and Jupyter Notebook.
+      </p>
+    </div>
+  </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<!--end of analysis with notebook-->
+<br /><br />
+<script>
+  AOS.init({
+    duration: 1000,
+    delay: 400,
+  });
+</script>
+{% endblock %}

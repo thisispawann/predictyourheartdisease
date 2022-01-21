@@ -1,0 +1,73 @@
+{% extends 'base_layout2.html' %} {% block css %}
+{% endblock %} {% block content %}
+<style>
+    .dropdown-toggle::after {
+      content: none;
+    }
+    .form-label{
+      font-size: 1rem !important;
+    }
+    html{
+      font-family: 'Raleway', sans-serif;
+    }
+  </style>
+  <p>
+    {% if messages %}
+        {% for message in messages %}
+          <p class="red-text text-center">{{ message }}</p>
+          <br>
+        {% endfor %}
+      {% endif %}
+  <h1 class="text-center mt-4">Feedback Form</h1>
+  <div class="container mt-5" style="width: 60%">
+    <form class="" method="POST">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="fname" class="form-label">Name</label>
+        <input
+          type="text"
+          name="name"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="your name"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Email address</label
+        >
+        <input
+          type="email"
+          name="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="name@example.com"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label"
+          >Feedback</label
+        >
+        <textarea
+          class="form-control"
+          name="feedback"
+          id="exampleFormControlTextarea1"
+          rows="10"
+          cols="300"
+          required
+          style="height:100%"
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <input
+          type="submit"
+          class="btn btn-primary mt-1 ml-4"
+          value="Post Feedback"
+        />
+      </div>
+    </form>
+  </div>
+  
+{% endblock %}

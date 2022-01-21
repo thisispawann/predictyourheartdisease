@@ -1,0 +1,65 @@
+{% extends 'base_layout2.html' %} {% block css %}
+<style>
+  html{
+    font-family: 'Raleway', sans-serif;
+  }
+  footer {
+    padding-left: 295px;
+  }
+  .con {
+    padding-left: 390px;
+    width: 90%;
+    flex: 1 0 auto;
+    margin-left:-8rem
+  }
+  @media only screen and (max-width: 992px) {
+    .con,
+    footer {
+      padding-left: 0;
+    }
+  }
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+</style>
+{% endblock %} {% block content %}
+<div class="con" >
+  <h5 class="mt-5 text-success">
+    Here is the list of best Doctors and Hospitals for Heart Disease.
+  </h5>
+  <br />
+  <table class="striped">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Doctor Name</th>
+        <th>Hospital Name</th>
+        <th>Email</th>
+        <th>Experience</th>
+        <th>Qualification</h1>
+        <th>Phone</th>
+        <th>Number of Cases Handle</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for data in datas %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ data.doctor_name }}</td>
+        <td>{{ data.hospital_name }}</td>
+        <td>{{ data.email }}</td>
+        <td>{{ data.experience }}</td>
+        <td>{{ data.qualification }}</td>
+        <td>{{ data.phone_no }}</td>
+        <td>{{ data.casesHandle }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <br />
+  <br />
+</div>
+{% endblock %}
