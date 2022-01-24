@@ -32,10 +32,13 @@
       rel="stylesheet"
       media="screen,projection"
     />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap"
+    />
     <style>
-      *{
-        font-family: 'Raleway', sans-serif;
+      * {
+        font-family: "Raleway", sans-serif;
       }
       .text {
         position: relative;
@@ -65,26 +68,14 @@
 
               {% if user.is_authenticated %}
               <a
-                class="
-                  white
-                  black-text
-                  waves-effect waves-dark
-                  btn
-                  modal-trigger
-                "
+                class="white black-text waves-effect waves-dark btn modal-trigger"
                 href="{% url 'signout' %}"
                 ><b>SIGN OUT </b></a
               >
               {% else %}
               <a
                 style="border-radius: 5px"
-                class="
-                  white
-                  black-text
-                  waves-effect waves-dark
-                  btn
-                  modal-trigger
-                "
+                class="white black-text waves-effect waves-dark btn modal-trigger"
                 href="/signin"
                 ><b>SIGN IN </b></a
               >
@@ -115,9 +106,9 @@
             <div class="col s12 m6 l3">
               <h5 class="white-text">HDPS</h5>
               <p class="grey-text text-lighten-4">
-                Heart Disease Prediction System (HDPS) is a user-friendly
-                web-based application which predicts heart disease using Machine
-                Learning algorithm (ML).
+                Heart Disease Prediction System is a user-friendly web-based
+                application which predicts heart disease using Machine Learning
+                algorithm.
               </p>
             </div>
             <div class="col l2 m6 s12 offset-l1">
@@ -165,7 +156,6 @@
                   class="fab fa-facebook-square fa-2x"
                 ></i
               ></a>
-              
             </div>
           </div>
           <hr />
